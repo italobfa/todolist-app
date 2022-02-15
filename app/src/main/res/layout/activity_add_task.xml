@@ -40,7 +40,25 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"/>
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:layout_constraintTop_toBottomOf="@+id/til_title"
+        app:layout_constraintStart_toStartOf="@id/guide_start"
+        app:layout_constraintEnd_toEndOf="@id/guide_end"
+        android:layout_marginTop="32dp"
+        android:hint="Descrição">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -50,7 +68,7 @@
         android:layout_height="wrap_content"
         android:hint="Data"
         app:startIconDrawable="@drawable/ic_calendar"
-        app:layout_constraintTop_toBottomOf="@+id/til_title"
+        app:layout_constraintTop_toBottomOf="@+id/til_description"
         app:layout_constraintStart_toStartOf="@+id/guide_start"
         app:layout_constraintEnd_toEndOf="@+id/guide_end"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
