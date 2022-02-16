@@ -10,11 +10,12 @@
         tools:text="Tarefa 1"
         android:textStyle="bold"
         android:id="@+id/tv_title"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/iv_more"/>
 
     <TextView
         tools:text="Minha tarefa tem essa descrição"
@@ -26,8 +27,8 @@
         app:layout_constraintEnd_toStartOf="@id/iv_more"/>
 
     <TextView
-        tools:text="15/02/2022"
-        android:id="@+id/tv_date"
+        tools:text="15/02/2022 10:00"
+        android:id="@+id/tv_date_hour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="12sp"
