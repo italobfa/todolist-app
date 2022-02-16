@@ -1,10 +1,9 @@
-package com.example.todolist
+package com.example.todolist.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.todolist.databinding.ActivityMainBinding
-import com.example.todolist.ui.AddTaskActivity
 
 class MainActivity : AppCompatActivity() {
 
