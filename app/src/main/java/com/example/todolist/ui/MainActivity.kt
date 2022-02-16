@@ -24,6 +24,8 @@ class MainActivity : AppCompatActivity() {
         binding.fab.setOnClickListener {
             startActivityForResult(Intent(this, AddTaskActivity::class.java), CREATE_NEW_TASK)
         }
+
+        adapter.listenerEdit
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
