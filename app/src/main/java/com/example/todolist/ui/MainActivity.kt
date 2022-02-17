@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.example.todolist.databinding.ActivityMainBinding
 import com.example.todolist.datasource.TaskDataSource
 
@@ -33,6 +34,11 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra(AddTaskActivity.TASK_ID, it.id)
             startActivityForResult(intent, CREATE_NEW_TASK)
         }
+
+        adapter.listenerDelete = {
+            TaskDataSource.deleteTask(it)
+            uptadeList()
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -41,7 +47,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun uptadeList(){
-        adapter.submitList(TaskDataSource.getList())
+        val list = TaskDataSource.getList()
+        binding.includeEmpty.emptyState.visibility = if (list.isEmpty()) View.VISIBLE
+        else View.GONE
+
+        adapter.submitList(list)
     }
 
     companion object{
