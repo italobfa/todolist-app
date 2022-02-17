@@ -1,5 +1,6 @@
 package com.example.todolist.ui
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,6 +17,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.rvTasks.adapter = adapter
+        uptadeList()
         insertListeners()
     }
 
@@ -25,15 +28,20 @@ class MainActivity : AppCompatActivity() {
             startActivityForResult(Intent(this, AddTaskActivity::class.java), CREATE_NEW_TASK)
         }
 
-        adapter.listenerEdit
+        adapter.listenerEdit = {
+            val intent = Intent(this, AddTaskActivity::class.java)
+            intent.putExtra(AddTaskActivity.TASK_ID, it.id)
+            startActivityForResult(intent, CREATE_NEW_TASK)
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(requestCode == CREATE_NEW_TASK){
-            binding.rvTasks.adapter = adapter
-            adapter.submitList(TaskDataSource.getList())
-        }
+        if(requestCode == CREATE_NEW_TASK && resultCode == Activity.RESULT_OK) uptadeList()
+    }
+
+    private fun uptadeList(){
+        adapter.submitList(TaskDataSource.getList())
     }
 
     companion object{
