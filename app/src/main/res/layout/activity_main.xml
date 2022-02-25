@@ -10,12 +10,11 @@
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lista de Tarefas"
+        android:text="@string/lista_de_tarefas"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_margin="16dp"
         android:textSize="24sp"
-        android:textColor="@color/black"
         android:textStyle="bold"/>
 
     <include android:id="@+id/include_empty"
@@ -40,6 +39,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="16dp"
         android:src="@drawable/ic_add"
-        android:contentDescription="Adiciona nova tarefa" />
+        android:contentDescription="@string/adiciona_nova_tarefa" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

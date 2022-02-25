@@ -10,14 +10,13 @@
         android:id="@+id/tv_message"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Ops! Você ainda não\n tem nenhuma tarefa"
+        android:text="@string/nenhuma_tarefa"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/iv_image"
         android:layout_marginBottom="16dp"
         android:textSize="24sp"
-        android:gravity="center"
-        android:textColor="@color/black"/>
+        android:gravity="center"/>
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_image"
